@@ -30,7 +30,12 @@ class DataController extends Controller
     function getAllSmartphone()
     {
         $sparql = new Sparql();
-
         return $sparql->getSmartphone('all');
+    }
+
+    function getSmartphone($id)
+    {
+        $sparql = new Sparql();
+        return $sparql->getSmartphone('phoneID', $id);
     }
 }

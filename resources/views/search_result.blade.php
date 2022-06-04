@@ -13,7 +13,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="img-card">
-                            <a href="/restaurant/{{$data->phoneID}}">
+                            <a href="/smartphone/{{$data->phoneID}}">
                                 <h3>{{ $data->phoneName }}</h3>
                             </a>
                         </div>

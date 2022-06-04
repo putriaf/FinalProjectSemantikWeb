@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SmartphoneController::class, 'index']);
 Route::post('/search', [SmartphoneController::class, 'search']);
+Route::get('/smartphone/{id}', [SmartphoneController::class, 'getSmartphoneById']);
