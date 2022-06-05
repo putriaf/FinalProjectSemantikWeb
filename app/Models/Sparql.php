@@ -19,7 +19,7 @@ class Sparql extends Model
 
     function getSmartphone($type = 'all', $search = '')
     {
-        $sparql = new \EasyRdf\Sparql\Client('http://localhost:3030/smartphone');
+        $sparql = new \EasyRdf\Sparql\Client('http://localhost:3030/smartphones');
 
         $phoneID = '';
         $phoneName = '';
@@ -60,46 +60,126 @@ class Sparql extends Model
             $camera = $search;
         } else if ($type == 'all') {
             $search = '';
+        } else if ($type == 'allAndSortPrice' || $type == 'allAndSortBattery') {
+            $search = '';
         } else {
             return "Unknown type";
         }
 
-        $result = $sparql->query(
-            "
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX d: <http://phonology.com/ns/data#>
-            PREFIX i: <http://phonology.com/ns/info#>
-
-            SELECT ?phoneID ?phoneName ?phoneBrand ?batteryCapacity ?chipset ?price ?weight ?operatingSystem ?RAM ?memoryCapacity ?diagonalWidth ?camera
-            WHERE
-            { 
-            ?phone  i:phoneID ?phoneID ;
-                    i:phoneName ?phoneName;
-                    i:phoneBrand ?phoneBrand;
-                    i:batteryCapacity ?batteryCapacity;
-                    i:chipset ?chipset;
-                    i:price ?price;
-                    i:weight ?weight;
-                    i:operatingSystem ?operatingSystem;
-                    i:RAM ?RAM;
-                    i:memoryCapacity ?memoryCapacity;
-                    i:diagonalWidth ?diagonalWidth;
-                    i:camera ?camera.
-            FILTER regex (?phoneID, \"{$phoneID}\", \"i\")
-            FILTER regex (?phoneName, \"{$phoneName}\", \"i\")
-            FILTER regex (?phoneBrand, \"{$phoneBrand}\", \"i\")
-            FILTER regex (?batteryCapacity, \"{$batteryCapacity}\", \"i\")
-            FILTER regex (?chipset, \"{$chipset}\", \"i\")
-            FILTER regex (?price, \"{$price}\", \"i\")
-            FILTER regex (?weight, \"{$weight}\", \"i\")
-            FILTER regex (?operatingSystem, \"{$operatingSystem}\", \"i\")
-            FILTER regex (?RAM, \"{$RAM}\", \"i\")
-            FILTER regex (?memoryCapacity, \"{$memoryCapacity}\", \"i\")
-            FILTER regex (?diagonalWidth, \"{$diagonalWidth}\", \"i\")
-            FILTER regex (?camera, \"{$camera}\", \"i\")
-            }
-            "
-        );
-        return $result;
+        if ($type == 'allAndSortPrice') {
+            $result = $sparql->query(
+                "
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX d: <http://phonology.com/ns/data#>
+                PREFIX i: <http://phonology.com/ns/info#>
+    
+                SELECT ?phoneID ?phoneName ?phoneBrand ?batteryCapacity ?chipset ?price ?weight ?operatingSystem ?RAM ?memoryCapacity ?diagonalWidth ?camera
+                WHERE
+                { 
+                ?phone  i:phoneID ?phoneID ;
+                        i:phoneName ?phoneName;
+                        i:phoneBrand ?phoneBrand;
+                        i:batteryCapacity ?batteryCapacity;
+                        i:chipset ?chipset;
+                        i:price ?price;
+                        i:weight ?weight;
+                        i:operatingSystem ?operatingSystem;
+                        i:RAM ?RAM;
+                        i:memoryCapacity ?memoryCapacity;
+                        i:diagonalWidth ?diagonalWidth;
+                        i:camera ?camera.
+                FILTER regex (?phoneID, \"{$phoneID}\", \"i\")
+                FILTER regex (?phoneName, \"{$phoneName}\", \"i\")
+                FILTER regex (?phoneBrand, \"{$phoneBrand}\", \"i\")
+                FILTER regex (?batteryCapacity, \"{$batteryCapacity}\", \"i\")
+                FILTER regex (?chipset, \"{$chipset}\", \"i\")
+                FILTER regex (?price, \"{$price}\", \"i\")
+                FILTER regex (?weight, \"{$weight}\", \"i\")
+                FILTER regex (?operatingSystem, \"{$operatingSystem}\", \"i\")
+                FILTER regex (?RAM, \"{$RAM}\", \"i\")
+                FILTER regex (?memoryCapacity, \"{$memoryCapacity}\", \"i\")
+                FILTER regex (?diagonalWidth, \"{$diagonalWidth}\", \"i\")
+                FILTER regex (?camera, \"{$camera}\", \"i\")
+                } ORDER BY DESC (?price) 
+                "
+            );
+            return $result;
+        } else if ($type == 'allAndSortBattery') {
+            $result = $sparql->query(
+                "
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX d: <http://phonology.com/ns/data#>
+                PREFIX i: <http://phonology.com/ns/info#>
+    
+                SELECT ?phoneID ?phoneName ?phoneBrand ?batteryCapacity ?chipset ?price ?weight ?operatingSystem ?RAM ?memoryCapacity ?diagonalWidth ?camera
+                WHERE
+                { 
+                ?phone  i:phoneID ?phoneID ;
+                        i:phoneName ?phoneName;
+                        i:phoneBrand ?phoneBrand;
+                        i:batteryCapacity ?batteryCapacity;
+                        i:chipset ?chipset;
+                        i:price ?price;
+                        i:weight ?weight;
+                        i:operatingSystem ?operatingSystem;
+                        i:RAM ?RAM;
+                        i:memoryCapacity ?memoryCapacity;
+                        i:diagonalWidth ?diagonalWidth;
+                        i:camera ?camera.
+                FILTER regex (?phoneID, \"{$phoneID}\", \"i\")
+                FILTER regex (?phoneName, \"{$phoneName}\", \"i\")
+                FILTER regex (?phoneBrand, \"{$phoneBrand}\", \"i\")
+                FILTER regex (?batteryCapacity, \"{$batteryCapacity}\", \"i\")
+                FILTER regex (?chipset, \"{$chipset}\", \"i\")
+                FILTER regex (?price, \"{$price}\", \"i\")
+                FILTER regex (?weight, \"{$weight}\", \"i\")
+                FILTER regex (?operatingSystem, \"{$operatingSystem}\", \"i\")
+                FILTER regex (?RAM, \"{$RAM}\", \"i\")
+                FILTER regex (?memoryCapacity, \"{$memoryCapacity}\", \"i\")
+                FILTER regex (?diagonalWidth, \"{$diagonalWidth}\", \"i\")
+                FILTER regex (?camera, \"{$camera}\", \"i\")
+                } ORDER BY DESC (?batteryCapacity)
+                "
+            );
+            return $result;
+        } else {
+            $result = $sparql->query(
+                "
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX d: <http://phonology.com/ns/data#>
+                PREFIX i: <http://phonology.com/ns/info#>
+    
+                SELECT ?phoneID ?phoneName ?phoneBrand ?batteryCapacity ?chipset ?price ?weight ?operatingSystem ?RAM ?memoryCapacity ?diagonalWidth ?camera
+                WHERE
+                { 
+                ?phone  i:phoneID ?phoneID ;
+                        i:phoneName ?phoneName;
+                        i:phoneBrand ?phoneBrand;
+                        i:batteryCapacity ?batteryCapacity;
+                        i:chipset ?chipset;
+                        i:price ?price;
+                        i:weight ?weight;
+                        i:operatingSystem ?operatingSystem;
+                        i:RAM ?RAM;
+                        i:memoryCapacity ?memoryCapacity;
+                        i:diagonalWidth ?diagonalWidth;
+                        i:camera ?camera.
+                FILTER regex (?phoneID, \"{$phoneID}\", \"i\")
+                FILTER regex (?phoneName, \"{$phoneName}\", \"i\")
+                FILTER regex (?phoneBrand, \"{$phoneBrand}\", \"i\")
+                FILTER regex (?batteryCapacity, \"{$batteryCapacity}\", \"i\")
+                FILTER regex (?chipset, \"{$chipset}\", \"i\")
+                FILTER regex (?price, \"{$price}\", \"i\")
+                FILTER regex (?weight, \"{$weight}\", \"i\")
+                FILTER regex (?operatingSystem, \"{$operatingSystem}\", \"i\")
+                FILTER regex (?RAM, \"{$RAM}\", \"i\")
+                FILTER regex (?memoryCapacity, \"{$memoryCapacity}\", \"i\")
+                FILTER regex (?diagonalWidth, \"{$diagonalWidth}\", \"i\")
+                FILTER regex (?camera, \"{$camera}\", \"i\")
+                }
+                "
+            );
+            return $result;
+        }
     }
 }

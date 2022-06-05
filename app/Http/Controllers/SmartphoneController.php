@@ -17,6 +17,26 @@ class SmartphoneController extends Controller
         return view('index', compact('unique'));
     }
 
+    public function showAndSortPrice()
+    {
+        $data = new DataController();
+        $dataAll = collect($data->getAllSmartphoneAndSortPrice());
+        $unique = $dataAll->unique('phoneID');
+        $unique->values()->all();
+
+        return view('index', compact('unique'));
+    }
+
+    public function showAndSortBattery()
+    {
+        $data = new DataController();
+        $dataAll = collect($data->getAllSmartphoneAndSortBattery());
+        $unique = $dataAll->unique('phoneID');
+        $unique->values()->all();
+
+        return view('index', compact('unique'));
+    }
+
     public function search(Request $request)
     {
         $data = new DataController();

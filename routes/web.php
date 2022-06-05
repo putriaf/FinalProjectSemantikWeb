@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [SmartphoneController::class, 'index']);
+Route::get('/sort/price', [SmartphoneController::class, 'showAndSortPrice']);
+Route::get('/sort/battery', [SmartphoneController::class, 'showAndSortBattery']);
 Route::post('/search', [SmartphoneController::class, 'search']);
 Route::get('/smartphone/{id}', [SmartphoneController::class, 'getSmartphoneById']);

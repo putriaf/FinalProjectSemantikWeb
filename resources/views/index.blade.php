@@ -52,15 +52,23 @@
 </div>
 <div class="section max-h-full pb-24 my-auto bg-white dark:bg-gray-800">
     <h2 class="text-center font-weight-600 mb-5">All Smartphones</h2>
+    <div class="row px-5 mb-5">
+        <div class="col-4">
+            <a href="/sort/price" class="btn btn-primary" style="background-color: #053046; color: #fff">Sort By Price</a>
+            <a href="/sort/battery" class="btn btn-primary" style="background-color: #053046; color: #fff">Sort By Battery Capacity</a>
+        </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-3 g-4 px-5">
         @foreach($unique as $data)
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">{{ $data->phoneName }}</h5>
-              <p class="card-text">{{ $data->phoneBrand }}</p>
-              <a href="/smartphone/{{ $data->phoneID }}" class="btn btn-primary">Detail</a>
+                <h5 class="card-title">{{ $data->phoneName }}</h5>
+                <p class="card-text">Producted by {{ $data->phoneBrand }}</p>
+                <p class="card-text">Chipset {{ $data->chipset }}</p>
+                <p class="card-text">{{ $data->batteryCapacity }} mAH</p>
+                <p class="card-text mb-4">IDR {{ $data->price }}</p>
+                <a href="/smartphone/{{ $data->phoneID }}" class="btn btn-primary" style="background-color: #1475a6">Detail</a>
             </div>
           </div>
         </div>

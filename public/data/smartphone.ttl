@@ -11,9 +11,9 @@
 d:p0001 i:phoneID "p0001";
         i:phoneName "iPhone 13 Pro" ; 
         i:phoneBrand "Apple";
-        i:batteryCapacity "3.227";
+        i:batteryCapacity "3227";
         i:chipset "A15 Bionic";
-        i:price "17.500.000";
+        i:price "17500000";
         i:weight "203";
         i:operatingSystem "iOS" ;
         i:RAM "4 GB" ;
@@ -24,9 +24,9 @@ d:p0001 i:phoneID "p0001";
 d:p0002 i:phoneID "p0002";
         i:phoneName "iPhone 13 Mini" ; 
         i:phoneBrand "Apple";
-        i:batteryCapacity "3.227";
+        i:batteryCapacity "3227";
         i:chipset "A15 Bionic";
-        i:price "13.199.000";
+        i:price "13199000";
         i:weight "198";
         i:operatingSystem "iOS" ;
         i:RAM "4 GB" ;
@@ -37,9 +37,9 @@ d:p0002 i:phoneID "p0002";
 d:p0003 i:phoneID "p0003";
         i:phoneName "iPhone 13 Pro Max" ; 
         i:phoneBrand "Apple";
-        i:batteryCapacity "3.227";
+        i:batteryCapacity "3227";
         i:chipset "A15 Bionic";
-        i:price "13.199.000";
+        i:price "13199000";
         i:weight "238";
         i:operatingSystem "iOS" ;
         i:RAM "6 GB" ;
@@ -48,11 +48,11 @@ d:p0003 i:phoneID "p0003";
         i:camera "12 MP" .
 
 d:p0004 i:phoneID "p0004";
-        i:phoneName "vivo T2x" ; 
+        i:phoneName "Vivo T2x" ; 
         i:phoneBrand "Vivo";
-        i:batteryCapacity "6.000";
+        i:batteryCapacity "6000";
         i:chipset "MediaTek Dimensity 1300";
-        i:price "3.700.000";
+        i:price "3700000";
         i:weight "200";
         i:operatingSystem "Android" ;
         i:RAM "8 GB" ;
@@ -63,12 +63,207 @@ d:p0004 i:phoneID "p0004";
 d:p0005 i:phoneID "p0005";
         i:phoneName "Samsung Galaxy M13" ; 
         i:phoneBrand "Samsung";
-        i:batteryCapacity "5.000";
+        i:batteryCapacity "5000";
         i:chipset "Exynos 850";
-        i:price "";
+        i:price "4000000";
         i:weight "192";
         i:operatingSystem "Android" ;
         i:RAM "4 GB" ;
         i:memoryCapacity "64 GB" ;
         i:diagonalWidth "6,6" ;
         i:camera "50 MP" .
+
+d:p0006 i:phoneID "p0006";
+        i:phoneName "Samsung Galaxy S21 Ultra" ; 
+        i:phoneBrand "Samsung";
+        i:batteryCapacity "5000";
+        i:chipset "Snapdragon 888/Exynos 2100";
+        i:price "18900000";
+        i:weight "234";
+        i:operatingSystem "Android" ;
+        i:RAM "12 GB" ;
+        i:memoryCapacity "256 GB" ;
+        i:diagonalWidth "6,8" ;
+        i:camera "64 MP" .
+
+d:p0007 i:phoneID "p0007";
+        i:phoneName "Google Pixel 6 Pro" ; 
+        i:phoneBrand "Google";
+        i:batteryCapacity "5003";
+        i:chipset "Tensor";
+        i:price "12800000";
+        i:weight "200";
+        i:operatingSystem "Android" ;
+        i:RAM "12 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,71" ;
+        i:camera "50 MP" .
+
+d:p0008 i:phoneID "p0008";
+        i:phoneName "OnePlus 9 Pro" ; 
+        i:phoneBrand "OnePlus";
+        i:batteryCapacity "4500";
+        i:chipset "Snapdragon 888";
+        i:price "12700000";
+        i:weight "201";
+        i:operatingSystem "Android" ;
+        i:RAM "8 GB" ;
+        i:memoryCapacity "256 GB" ;
+        i:diagonalWidth "6,7" ;
+        i:camera "30 MP" .
+
+d:p0009 i:phoneID "p0009";
+        i:phoneName "ASUS ROG Phone 5" ; 
+        i:phoneBrand "ASUS";
+        i:batteryCapacity "6000";
+        i:chipset "Snapdragon 888";
+        i:price "8900000";
+        i:weight "220";
+        i:operatingSystem "Android" ;
+        i:RAM "8 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,78" ;
+        i:camera "50 MP" .
+
+d:p0010 i:phoneID "p0010";
+        i:phoneName "Xiaomi 11 Ultra" ; 
+        i:phoneBrand "Xiaomi";
+        i:batteryCapacity "5000";
+        i:chipset "Snapdragon 888";
+        i:price "16900000";
+        i:weight "210";
+        i:operatingSystem "Android" ;
+        i:RAM "8 GB" ;
+        i:memoryCapacity "256 GB" ;
+        i:diagonalWidth "6,81" ;
+        i:camera "40 MP" .
+
+d:p0011 i:phoneID "p0011";
+        i:phoneName "Sony Xperia 1 III" ; 
+        i:phoneBrand "Sony";
+        i:batteryCapacity "4500";
+        i:chipset "Snapdragon 888";
+        i:price "13700000";
+        i:weight "204";
+        i:operatingSystem "Android" ;
+        i:RAM "12 GB" ;
+        i:memoryCapacity "256 GB" ;
+        i:diagonalWidth "6,5" ;
+        i:camera "40 MP" .
+
+d:p0012 i:phoneID "p0012";
+        i:phoneName "Xiaomi Poco X3 NFC" ; 
+        i:phoneBrand "Xiaomi";
+        i:batteryCapacity "5160";
+        i:chipset "Qualcomm SM7150-AC Snapdragon 732G";
+        i:price "3750000";
+        i:weight "200";
+        i:operatingSystem "Android" ;
+        i:RAM "6 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,67" ;
+        i:camera "20 MP" .
+
+d:p0013 i:phoneID "p0013";
+        i:phoneName "iPhone 12 Pro" ; 
+        i:phoneBrand "Apple";
+        i:batteryCapacity "5000";
+        i:chipset "A14 Bionic Hexacore"; 
+        i:price "4000000";
+        i:weight "220";
+        i:operatingSystem "iOS" ;
+        i:RAM "6 GB" ;
+        i:memoryCapacity "64 GB" ;
+        i:diagonalWidth "6,1" ;
+        i:camera "12 MP" .
+
+d:p0014 i:phoneID "p0014";
+        i:phoneName "Realme C17" ; 
+        i:phoneBrand "Xiaomi";
+        i:batteryCapacity "5000";
+        i:chipset "Snapdragon 460";
+        i:price "2800000";
+        i:weight "200";
+        i:operatingSystem "Android" ;
+        i:RAM "6 GB" ;
+        i:memoryCapacity "256 GB" ;
+        i:diagonalWidth "6,5" ;
+        i:camera "50 MP" .
+
+d:p0015 i:phoneID "p0015";
+        i:phoneName "Oppo Reno 4F" ; 
+        i:phoneBrand "Oppo";
+        i:batteryCapacity "4000";
+        i:chipset "Mediatek Hello P95";
+        i:price "4300000";
+        i:weight "202";
+        i:operatingSystem "Android" ;
+        i:RAM "8 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,43" ;
+        i:camera "16 MP" .
+
+d:p0016 i:phoneID "p0016";
+        i:phoneName "Xiaomi Redmi 9C" ; 
+        i:phoneBrand "Xiaomi";
+        i:batteryCapacity "5000";
+        i:chipset "Mediatek Hello G35";
+        i:price "1800000";
+        i:weight "200";
+        i:operatingSystem "Android" ;
+        i:RAM "3 GB" ;
+        i:memoryCapacity "32 GB" ;
+        i:diagonalWidth "6,53" ;
+        i:camera "13 MP" .
+
+d:p0017 i:phoneID "p0017";
+        i:phoneName "Samsung Galaxy M51" ; 
+        i:phoneBrand "Samsung";
+        i:batteryCapacity "7000";
+        i:chipset "Snapdragon 730G";
+        i:price "5400000";
+        i:weight "250";
+        i:operatingSystem "Android" ;
+        i:RAM "8 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,7" ;
+        i:camera "32 MP" .
+
+d:p0018 i:phoneID "p0018";
+        i:phoneName "ASUS ROG Phone 3" ; 
+        i:phoneBrand "ASUS";
+        i:batteryCapacity "6000";
+        i:chipset "Qualcomm SM8250";
+        i:price "9000000";
+        i:weight "200";
+        i:operatingSystem "Android" ;
+        i:RAM "8 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,59" ;
+        i:camera "24 MP" .
+
+d:p0019 i:phoneID "p0019";
+        i:phoneName "Vivo X60 Pro+" ; 
+        i:phoneBrand "Vivo";
+        i:batteryCapacity "4200";
+        i:chipset "Qualcomm SM8350";
+        i:price "13000000";
+        i:weight "192";
+        i:operatingSystem "Android" ;
+        i:RAM "8 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,56" ;
+        i:camera "32 MP" .
+
+d:p0020 i:phoneID "p0020";
+        i:phoneName "Realme Narzo 30 Pro" ; 
+        i:phoneBrand "Xiaomi";
+        i:batteryCapacity "5000";
+        i:chipset "MediaTek MT6853";
+        i:price "3300000";
+        i:weight "200";
+        i:operatingSystem "Android" ;
+        i:RAM "6 GB" ;
+        i:memoryCapacity "128 GB" ;
+        i:diagonalWidth "6,5" ;
+        i:camera "8 MP" .
